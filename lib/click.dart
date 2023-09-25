@@ -15,8 +15,8 @@ class Click extends StatefulWidget {
 
 class _ClickState extends State<Click> {
   late CameraController _cameraController;
-  XFile? _capturedImage; // Store the captured image file
-  bool _showPreview = true; // Control whether to show the camera preview
+  XFile? _capturedImage; 
+  bool _showPreview = true; 
   String _currentIcon = "assets/camerabutton.png";
   String text = "Click your meal";
 
@@ -180,13 +180,13 @@ class _ClickState extends State<Click> {
 
     try {
       final XFile imageFile = await _cameraController.takePicture();
-      // Update the captured image and hide the camera preview
+
       setState(() {
         _capturedImage = imageFile;
         _showPreview = false;
       });
 
-      // Now you have the captured image in 'imageFile', you can use it as needed
+    
       if (kDebugMode) {
         print('Image captured at ${imageFile.path}');
       }
